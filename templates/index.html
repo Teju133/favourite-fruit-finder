@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- ✅ Google Search Console Verification -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
+
+    <!-- Title that shows in the browser tab -->
     <title>Tejaswin - Favorite Fruit Finder</title>
 
-    <!-- ✅ Link to CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-
-    <!-- ✅ SEO Tags -->
-    <meta name="description" content="Tejaswin is a fun website that tells you your favorite fruit based on your name!">
-    <meta name="keywords" content="fruit, favorite fruit, name, fun website, Tejaswin, fruit generator">
+    <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Tejaswin is a fun website that suggests a random fruit based on your name! Try it now!">
+    <meta name="keywords" content="fruit finder, fun website, Tejaswin, name-based fruit, random fruit">
     <meta name="author" content="Tejaswini">
+    
+    <!-- ✅ Open Graph (For Social Media) -->
+    <meta property="og:title" content="Tejaswin - Find Your Favorite Fruit">
+    <meta property="og:description" content="Enter your name and get a random favorite fruit!">
+    <meta property="og:url" content="https://tejaswin.onrender.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Tejaswin's Favorite Fruit Finder! 🍓🍉🍊</h1>
-        
-        <form method="post">
-            <label for="name">Enter your name:</label>
-            <input type="text" id="name" name="name" required>
-            <button type="submit">Find My Favorite Fruit</button>
+        <h1>Find Your Favorite Fruit! 🍎🍌🍇</h1>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Enter Your Name" required>
+            <button type="submit">Find Fruit</button>
         </form>
-
         {% if fruit %}
-            <h2 class="fruit">Your Favorite Fruit is: {{ fruit }}</h2>
+            <h2>Your Favorite Fruit is: <span class="fruit">{{ fruit }}</span></h2>
         {% endif %}
     </div>
 </body>
