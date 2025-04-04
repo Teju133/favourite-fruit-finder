@@ -4,31 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Title that shows in the browser tab -->
     <title>Tejaswin - Favorite Fruit Finder</title>
 
-    <!-- ✅ SEO Tags for Google -->
+    <!-- ✅ Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- ✅ SEO Tags -->
     <meta name="description" content="Tejaswin is a fun website that tells you your favorite fruit based on your name!">
     <meta name="keywords" content="fruit, favorite fruit, name, fun website, Tejaswin, fruit generator">
     <meta name="author" content="Tejaswini">
-
-    <!-- ✅ Open Graph Tags for social media sharing -->
-    <meta property="og:title" content="Tejaswin - Fruit Fun!">
-    <meta property="og:description" content="Enter your name to find out your fruit match! 🍎🍇🍉">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tejaswin.onrender.com">
 </head>
 <body>
-    <h1>Welcome to Tejaswin's Favorite Fruit Finder! 🍓🍉🍊</h1>
-    
-    <form method="post">
-        <label for="name">Enter your name:</label>
-        <input type="text" id="name" name="name" required>
-        <button type="submit">Find My Favorite Fruit</button>
-    </form>
+    <div class="container">
+        <h1>Welcome to Tejaswin's Favorite Fruit Finder! 🍓🍉🍊</h1>
+        
+        <form method="post">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Find My Favorite Fruit</button>
+        </form>
 
-    {% if fruit %}
-        <h2>Your Favorite Fruit is: {{ fruit }}</h2>
-    {% endif %}
+        {% if fruit %}
+            <h2 class="fruit">Your Favorite Fruit is: {{ fruit }}</h2>
+        {% endif %}
+    </div>
 </body>
 </html>
